@@ -1,9 +1,9 @@
-const shipsWrapper = document.getElementById("ship-wrapper");
+const shipsWrapper = document.getElementById("ships-wrapper");
 
 const shipOptionCreation = (ship) => {
   console.log(ship);
   const wrapper = document.createElement("div");
-  wrapper.setAttribute("class", "ship");
+  wrapper.setAttribute("class", "wrapper");
   const image = document.createElement("img");
   image.setAttribute("src", ship.photo_url);
 
@@ -16,6 +16,14 @@ const shipOptionCreation = (ship) => {
   const price = document.createElement("span");
 
   const maxPersons = document.createElement("div");
+
+  const link = document.createElement("a");
+  link.setAttribute("class", "ship-link");
+  link.href = "./ship.html";
+
+  link.addEventListener("click", () => {
+    localStorage.setItem("id", ship.id);
+  });
 
   maxPersons.innerHTML = `max: ${ship.max_persons} persons`;
   maxPersons.setAttribute("class", "max-persons");
@@ -30,7 +38,9 @@ const shipOptionCreation = (ship) => {
   wrapper.append(titleWrapper);
   wrapper.append(maxPersons);
 
-  shipsWrapper.append(wrapper);
+  link.append(wrapper);
+
+  shipsWrapper.append(link);
 };
 
 fetch("https://642d8f99bf8cbecdb4099bf5.mockapi.io/ship")
