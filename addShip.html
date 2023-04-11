@@ -20,25 +20,25 @@
       </a>
       <ul>
         <li><a href="./index.html">Ships</a></li>
-        <li><a href="./addShip.html">Add ship</a></li>
+        <li><a href="#">Add ship</a></li>
       </ul>
     </header>
-    <section class="ship-section">
-      <div class="ship-wrapper" id="ship-wrapper">
-        <div class="ship-content">
-          <div class="ship-title" id="ship-title"></div>
-          <div class="ship-description" id="ship-description"></div>
-          <div class="ship-price" id="ship-price"></div>
-          <div class="ship-max" id="ship-max"></div>
-          <div class="ship-model" id="ship-model"></div>
-        </div>
-        <div id="photo" class="ship-photo"></div>
+    <div class="ships-wrapper" id="ships-wrapper">
+      <div class="ship_form">
+        <input id="name" placeholder="name" />
+        <input id="max_persons" placeholder="max_persons" />
+        <input id="model" placeholder="model" />
+        <input id="price" placeholder="price" />
+        <input id="photo_url" placeholder="photo_url" />
+        <input id="description" placeholder="description" />
+        <button id="submit_button">add</button>
+        <div id="success_message" class="success_message"></div>
       </div>
-    </section>
+    </div>
     <footer>
       <div>©boatit</div>
       <div>2023</div>
     </footer>
-    <script src="./js2.js"></script>
+    <script src="./js3.js"></script>
   </body>
 </html>

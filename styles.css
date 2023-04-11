@@ -152,6 +152,28 @@ footer div {
   margin-bottom: 4px;
 }
 
+.ship_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+
+.ship_form input {
+  padding: 8px;
+}
+
+.ship_form button {
+  padding: 8px;
+  background-color: #295788;
+  color: white;
+  cursor: pointer;
+}
+
+.success_message {
+  color: green;
+}
+
 @media only screen and (max-width: 768px) {
   .ship-wrapper {
     grid-template-columns: 1fr;

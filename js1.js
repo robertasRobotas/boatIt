@@ -1,7 +1,6 @@
 const shipsWrapper = document.getElementById("ships-wrapper");
 
 const shipOptionCreation = (ship) => {
-  console.log(ship);
   const wrapper = document.createElement("div");
   wrapper.setAttribute("class", "wrapper");
   const image = document.createElement("img");
@@ -29,7 +28,7 @@ const shipOptionCreation = (ship) => {
   maxPersons.setAttribute("class", "max-persons");
 
   title.innerHTML = ship.name;
-  price.innerHTML = ship.price;
+  price.innerHTML = `${ship.price} €`;
 
   titleWrapper.append(title);
   titleWrapper.append(price);
@@ -48,7 +47,9 @@ fetch("https://642d8f99bf8cbecdb4099bf5.mockapi.io/ship")
     return res.json();
   })
   .then((data) => {
-    data.forEach((ship) => {
-      shipOptionCreation(ship);
-    });
+    data
+      .sort((a, b) => Number(a.price) - Number(b.price))
+      .forEach((ship) => {
+        shipOptionCreation(ship);
+      });
   });
